@@ -1,6 +1,6 @@
 export const DATA_CONSULTA = '17/11/2026';
 
-// Os IDs correspondem aos produtos da Fake Store API.
+// Os IDs correspondem ao catálogo externo consultado pela Geracao Tech API.
 // Os preços abaixo foram consultados nas lojas indicadas, em reais.
 export const ofertasDaApi = [
   {
@@ -25,7 +25,7 @@ export const ofertasDaApi = [
   },
 ];
 
-// Produtos adicionais consultados nas lojas brasileiras, fora da Fake Store API.
+// Produtos adicionais consultados nas lojas brasileiras e cadastrados localmente.
 export const produtosComplementares = [
   {
     id: 'br-kingston-a400-240gb',

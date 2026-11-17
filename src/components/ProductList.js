@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import geracaoTechApi from '../services/geracaoTechApi';
 import { Button } from 'primereact/button';
 import ProductCard from './ProductCard';
 import ProductForm from './ProductForm';
@@ -20,9 +20,8 @@ export default function ProductList() {
       setErro('');
 
       try {
-        const resposta = await axios.get('https://fakestoreapi.com/products', {
+        const resposta = await geracaoTechApi.get('/products', {
           signal: controller.signal,
-          timeout: 15000,
         });
 
         if (!Array.isArray(resposta.data)) {

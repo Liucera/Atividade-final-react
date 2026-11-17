@@ -28,16 +28,17 @@ npm run build
 
 ## Componentes
 
-- `ProductList`: consulta `https://fakestoreapi.com/products` com Axios, seleciona os produtos que possuem ofertas brasileiras verificadas e organiza os itens adicionados pelo formulário.
+- `ProductList`: consulta os produtos pela Geracao Tech API, seleciona os que possuem ofertas brasileiras verificadas e organiza os itens adicionados pelo formulário.
+- `geracaoTechApi`: cliente Axios que centraliza o endereço do serviço externo e o tempo limite das requisições em `src/services/geracaoTechApi.js`.
 - `ProductCard`: recebe um produto por props e apresenta imagem, nome, descrição e preço em um `Card` do PrimeReact.
 - `ProductForm`: permite adicionar um produto com nome e preço. Imagem e descrição são opcionais.
 - `App.css`: contém os estilos personalizados. As classes do PrimeFlex organizam os campos e os cards em colunas responsivas.
 
 ## Funcionamento
 
-A aplicação consulta a Geracao Tech Store API e seleciona os produtos de IDs 9 e 10. O arquivo `src/data/ofertasBrasileiras.js` complementa esses produtos com nomes em português, fotos dos anúncios e preços consultados em lojas brasileiras. Os demais produtos da API não são exibidos porque não possuem preço brasileiro verificado neste projeto.
+Geracao Tech API é o nome usado neste projeto para o cliente HTTP que consulta um serviço externo de produtos. A aplicação seleciona os produtos de IDs 9 e 10 dessa consulta. O arquivo `src/data/ofertasBrasileiras.js` complementa esses produtos com nomes em português, fotos dos anúncios e preços consultados em lojas brasileiras. Os demais produtos da API não são exibidos porque não possuem preço brasileiro verificado neste projeto.
 
-O catálogo inclui também seis produtos adicionais de lojas brasileiras, cadastrados em `produtosComplementares`. Esses seis itens não vêm da Fake Store API. A seleção completa contém oito produtos, além dos que forem incluídos pelo formulário.
+O catálogo inclui também seis produtos adicionais de lojas brasileiras, cadastrados localmente em `produtosComplementares`. A seleção completa contém oito produtos, além dos que forem incluídos pelo formulário.
 
 Durante a consulta, a página informa que os produtos estão carregando. Se a API falhar, exibe uma mensagem, o botão Tentar novamente e os oito produtos da seleção salva no arquivo de ofertas. Se a API retornar uma lista vazia, os seis produtos complementares continuam disponíveis.
 
@@ -98,6 +99,8 @@ src/
   App.css
   data/
     ofertasBrasileiras.js
+  services/
+    geracaoTechApi.js
   components/
     ProductList.js
     ProductCard.js
