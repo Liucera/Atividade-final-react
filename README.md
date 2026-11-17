@@ -1,4 +1,4 @@
-# geração tech store
+# Geração Tech Store
 
 Construindo uma mini loja virtual com react (geração tech store)
 
