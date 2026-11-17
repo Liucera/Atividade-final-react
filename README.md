@@ -1,6 +1,6 @@
-# Geração Tech Store
+# geração tech store
 
-Construindo uma mini loja virtual com react (Geração Tech Store)
+Construindo uma mini loja virtual com react (geração tech store)
 
 Atividade de React com Create React App, PrimeReact, PrimeIcons, PrimeFlex e Axios.
 
