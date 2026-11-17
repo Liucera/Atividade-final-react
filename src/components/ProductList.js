@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Button } from 'primereact/button';
 import ProductCard from './ProductCard';
 import ProductForm from './ProductForm';
-import { DATA_CONSULTA, ofertasBrasileiras } from '../data/ofertasBrasileiras';
+import { DATA_CONSULTA, ofertasBrasileiras, ofertasDaApi, produtosComplementares } from '../data/ofertasBrasileiras';
 
 export default function ProductList() {
   const [produtos, setProdutos] = useState([]);
@@ -30,11 +30,11 @@ export default function ProductList() {
         }
 
         const produtosComOferta = resposta.data.flatMap((produto) => {
-          const oferta = ofertasBrasileiras.find((item) => item.id === produto.id);
+          const oferta = ofertasDaApi.find((item) => item.id === produto.id);
           return oferta ? [{ ...produto, ...oferta }] : [];
         });
 
-        if (!controller.signal.aborted) setProdutos(produtosComOferta);
+        if (!controller.signal.aborted) setProdutos([...produtosComOferta, ...produtosComplementares]);
       } catch (error) {
         if (!controller.signal.aborted) {
           setProdutos(ofertasBrasileiras);
