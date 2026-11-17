@@ -35,7 +35,7 @@ npm run build
 
 ## Funcionamento
 
-A aplicação consulta a Fake Store API e seleciona os produtos de IDs 9 e 10. O arquivo `src/data/ofertasBrasileiras.js` complementa esses produtos com nomes em português, fotos dos anúncios e preços consultados em lojas brasileiras. Os demais produtos da API não são exibidos porque não possuem preço brasileiro verificado neste projeto.
+A aplicação consulta a Geracao Tech Store API e seleciona os produtos de IDs 9 e 10. O arquivo `src/data/ofertasBrasileiras.js` complementa esses produtos com nomes em português, fotos dos anúncios e preços consultados em lojas brasileiras. Os demais produtos da API não são exibidos porque não possuem preço brasileiro verificado neste projeto.
 
 O catálogo inclui também seis produtos adicionais de lojas brasileiras, cadastrados em `produtosComplementares`. Esses seis itens não vêm da Fake Store API. A seleção completa contém oito produtos, além dos que forem incluídos pelo formulário.
 
